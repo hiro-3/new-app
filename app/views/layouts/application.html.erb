@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Which do you recommend</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-transparent">
+      <div class="container">
+      　<span><%= link_to 'Which do you recommend', pages_path  %></span>
+      </div>
+       <li>
+        <%= link_to 'log_in member', pages_path %>
+    </nav>
+　　<%= yield %>
+  </body>
+</html>
+       
+         　
+     
+  
