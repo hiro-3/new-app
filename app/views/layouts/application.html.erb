@@ -12,14 +12,20 @@
   <body>
     <nav class="navbar navbar-default navbar-fixed-top navbar-transparent">
       <div class="container">
-      　<span><%= link_to 'Which do you recommend', pages_path  %></span>
+        <%= link_to users_new_path  do %>
+          <span><%= image_tag "cooltext.png", class: "nav-brand" %></span>
+        <% end %>
       </div>
-       <li>
-        <%= link_to 'log_in member', pages_path %>
+      <div class="nav navbar-nav navbar-right">
+        <ul>
+          <li><%= link_to 'log_in ', users_new_path %></li>
+        </ul>
+      </div>
     </nav>
-　　<%= yield %>
+　 <%= yield %>
   </body>
 </html>
+      
        
          　
      
