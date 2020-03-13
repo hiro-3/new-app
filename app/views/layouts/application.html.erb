@@ -10,19 +10,30 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-default navbar-fixed-top navbar-transparent">
-      <div class="container">
-        <%= link_to users_new_path  do %>
-          <span><%= image_tag "cooltext.png", class: "nav-brand" %></span>
-        <% end %>
-      </div>
-      <div class="nav navbar-nav navbar-right">
-        <ul>
-          <li><%= link_to 'log_in ', users_new_path %></li>
-        </ul>
-      </div>
-    </nav>
+   <!--header-->
+    <header>
+     <nav class="navbar navbar-default navbar-fixed-top navbar-transparent">
+       <div class="container">
+         <%= link_to users_new_path  do %>
+           <span><%= image_tag "cooltext.png", class: "nav-brand" %></span>
+         <% end %>
+       </div>
+       <div class="nav navbar-nav navbar-right">
+         <ul>
+           <li><%= link_to 'log_in ', users_new_path %></li>
+         </ul>
+       </div>
+     </nav>
+   </header>
+      <% flash.each do |key, value| %>
+       <div class="alert alert-<%= key %>" role="alert"><%= value %></div>
+      <% end %>
 　 <%= yield %>
+   <script>
+     $(function(){
+     $(".alert").fadeOut(5000);
+       });
+   </script>
   </body>
 </html>
       

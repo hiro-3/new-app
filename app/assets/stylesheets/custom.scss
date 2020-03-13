@@ -1,17 +1,54 @@
 body {
-    text-align: right;
+    text-align: left;
 }
  
 .nav-brand{
     position: absolute;
-    left: 20px;
-    top: 20px;
+    left: 100px;
+    top: 10px;
 }
  
 nav ul li {
     display: inline-block;
-    margin-right: 250px;
+    margin-right: 500px;
     top: 20px;
     border: 1px solid #cccccc;
 }
 
+h1, h2 {
+  font-weight: 100;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.btn-white {
+  color: #fff;
+  border: 1px solid #fff;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 20px;
+  background-color: rgba(0,0,0,0.0);
+
+  &:hover {
+    color: #fff;
+  }
+}
+
+.user-new-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: #464646;
+  
+  .users-new-container {
+  padding-top: 220px;
+ }
+}
+
+header {
+  width: 50%;
+  padding: 15px 0;
+  margin: 0 auto;
+  text-align: center;
+}  
