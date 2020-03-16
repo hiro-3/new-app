@@ -1,0 +1,13 @@
+<div class="top-hero-wrapper text-center">
+  <div class="container top-hero-container">
+    <h1 class="text-white">Which do you recommend</h1>
+    <h2 class="text-white">sub title</h2>
+       <div class="row">
+          <%= form_for @topic do |f| %>
+            <%= f.label :image %>
+            <%= f.file_field :image, multiple: true %>
+            <%= f.submit '投稿', class: 'btn btn-black btn-block' %>
+          <% end %>  
+       </div> 
+  </div>
+</div>         
