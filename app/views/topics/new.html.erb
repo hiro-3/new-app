@@ -7,22 +7,11 @@
          <%= form_for @topic do |f| %>
            <div class="col-md-4 topics-new-container">
              <%= f.label :image1 %>
-             <%= f.file_field :image %>
+             <%= f.file_field :image, :multiple => true %>
              <%= f.label :description1%><br>
              <%= f.text_field :description %>
            </div>
-           <div class="col-md-4 topics-new-container">
-             <%= f.label :image2 %>
-             <%= f.file_field :image %>
-             <%= f.label :description2 %><br>
-             <%= f.text_field :description %>
-           </div>
-           <div class="col-md-4 topics-new-container">
-             <%= f.label :image3 %>
-             <%= f.file_field :image %>
-             <%= f.label :description3 %><br>
-             <%= f.text_field :description %>
-           </div>
+           
             <%= f.submit '投稿', class: 'btn btn-black btn-block' %>
            </div> 
          <% end %> 

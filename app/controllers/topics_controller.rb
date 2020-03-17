@@ -12,7 +12,7 @@ class TopicsController < ApplicationController
     @topic = current_user.topics.new(topic_params)
     
      if @topic.save
-        redirect_to root_path, success:'成功'
+        redirect_to topics_path, success:'成功'
      else
         flash.now[:danger] = '失敗'
         render :new
@@ -20,6 +20,6 @@ class TopicsController < ApplicationController
    end  
      private
        def topic_params
-        params.require(:topic).permit(:image, :description)
+        params.require(:topic).permit({image: []}, :description)
        end
 end      
