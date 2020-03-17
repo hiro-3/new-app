@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
   get 'topics/new'
+  get 'topics/index'
   get 'sessions/new'
   get 'users/new'
   
  resources :pages
  resources :users 
  resources :topics
+
  
  root 'pages#index'
  

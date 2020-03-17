@@ -1,13 +1,34 @@
 <div class="top-hero-wrapper text-center">
   <div class="container top-hero-container">
-    <h1 class="text-white">Which do you recommend</h1>
+    <h1 class="text-white">Which do you recommend ?</h1>
     <h2 class="text-white">sub title</h2>
        <div class="row">
-          <%= form_for @topic do |f| %>
-            <%= f.label :image %>
-            <%= f.file_field :image, multiple: true %>
+         <% @topic = Topic.new unless @topic %>
+         <%= form_for @topic do |f| %>
+           <div class="col-md-4 topics-new-container">
+             <%= f.label :image1 %>
+             <%= f.file_field :image %>
+             <%= f.label :description1%><br>
+             <%= f.text_field :description %>
+           </div>
+           <div class="col-md-4 topics-new-container">
+             <%= f.label :image2 %>
+             <%= f.file_field :image %>
+             <%= f.label :description2 %><br>
+             <%= f.text_field :description %>
+           </div>
+           <div class="col-md-4 topics-new-container">
+             <%= f.label :image3 %>
+             <%= f.file_field :image %>
+             <%= f.label :description3 %><br>
+             <%= f.text_field :description %>
+           </div>
             <%= f.submit '投稿', class: 'btn btn-black btn-block' %>
-          <% end %>  
-       </div> 
+           </div> 
+         <% end %> 
   </div>
 </div>         
+      
+      
+  
+            

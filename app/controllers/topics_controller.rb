@@ -1,28 +1,25 @@
 class TopicsController < ApplicationController
    def index
     @topic = Topic.all
-   end
-  
-  def new
+   end 
+   
+   def new
     @topic = Topic.new
-  end
-
-  def create
+   end 
+   
+   def create
+    #binding.pry
     @topic = current_user.topics.new(topic_params)
     
-      respond_to do |format|
-    if Topic.create_topics_by(topic_params)
-      format.html { redirect_to topics_path, notice: '成功' }
-      format.json { render :show, status: :created, location: @topic}
-    else
-      format.html { render :new }
-      format.json { render json: @topic.errors, status: :unprocessable_entity }
-    end
-  end
-
-　   private
-　    def topic_params
-         params.require(:topic).params({image: []})
-  　   end
-  　 end   
-end
+     if @topic.save
+        redirect_to root_path, success:'成功'
+     else
+        flash.now[:danger] = '失敗'
+        render :new
+     end
+   end  
+     private
+       def topic_params
+        params.require(:topic).permit(:image, :description)
+       end
+end      
