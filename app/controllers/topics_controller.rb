@@ -1,25 +1,28 @@
 class TopicsController < ApplicationController
    def index
-    @topic = Topic.all
+    @topics = Topic.all
    end 
    
    def new
-    @topic = Topic.new
+    @topics = Topic.new
    end 
    
    def create
-    #binding.pry
-    @topic = current_user.topics.new(topic_params)
+    #binding.prys
+    #後に３枚規制をかける
+    @topics = current_user.topics.new(topic_params)
     
-     if @topic.save
+     if @topics.save
         redirect_to topics_path, success:'成功'
      else
         flash.now[:danger] = '失敗'
         render :new
      end
    end  
+ 
      private
-       def topic_params
+       def topic_params 
+        #画像複数投稿
         params.require(:topic).permit({image: []}, :description)
        end
 end      

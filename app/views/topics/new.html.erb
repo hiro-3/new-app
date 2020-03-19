@@ -3,12 +3,11 @@
     <h1 class="text-white">Which do you recommend ?</h1>
     <h2 class="text-white">sub title</h2>
        <div class="row">
-         <% @topic = Topic.new unless @topic %>
-         <%= form_for @topic do |f| %>
+         <%= form_for @topics do |f| %>
            <div class="col-md-4 topics-new-container">
-             <%= f.label :image1 %>
-             <%= f.file_field :image, :multiple => true %>
-             <%= f.label :description1%><br>
+             <%= f.label :image %>
+             <%= f.file_field :image, multiple: true %>
+             <%= f.label :description %><br>
              <%= f.text_field :description %>
            </div>
            
