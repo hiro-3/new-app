@@ -4,19 +4,28 @@
     <h2 class="text-white">sub title</h2>
        <div class="row">
          <%= form_for @topics do |f| %>
-           <div class="col-md-4 topics-new-container">
+           <div class="col-md-4 ">
              <%= f.label :image %>
-             <%= f.file_field :image, multiple: true %>
+             <%= f.file_field :image %>
+           </div>
+           <div class="col-md-4 ">
+             <%= f.label :image1 %>
+             <%= f.file_field :image1 %>
+           </div>
+           <div class="col-md-4 ">
+             <%= f.label :image2 %>
+             <%= f.file_field :image2 %>
+           </div>
              <%= f.label :description %><br>
              <%= f.text_field :description %>
-           </div>
-           
-            <%= f.submit '投稿', class: 'btn btn-black btn-block' %>
+             <%= f.submit '投稿', class: 'btn btn-black btn-block' %>
            </div> 
          <% end %> 
   </div>
 </div>         
       
+           
+            
       
   
             

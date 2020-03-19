@@ -8,8 +8,9 @@ class TopicsController < ApplicationController
    end 
    
    def create
-    #binding.prys
+    #binding.pry
     #後に３枚規制をかける
+    @topics = Topic.new
     @topics = current_user.topics.new(topic_params)
     
      if @topics.save
@@ -23,6 +24,6 @@ class TopicsController < ApplicationController
      private
        def topic_params 
         #画像複数投稿
-        params.require(:topic).permit({image: []}, :description)
+        params.require(:topic).permit(:image, :image1, :image2, :description)
        end
 end      
