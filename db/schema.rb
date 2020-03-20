@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2020_03_19_043612) do
     t.string "image"
     t.string "image1"
     t.string "image2"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

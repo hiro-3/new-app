@@ -2,6 +2,7 @@
   <div class="container top-hero-container">
     <h1 class="text-white">Which do you recommend ?</h1>
     <h2 class="text-white">sub title</h2>
+     <% @topic = Topic.new unless @topic %>
        <div class="row">
          <%= form_for @topics do |f| %>
            <div class="col-md-4 ">

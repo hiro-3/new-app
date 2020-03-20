@@ -6,6 +6,8 @@ class CreateTopics < ActiveRecord::Migration[5.2]
       t.string :image
       t.string :image1
       t.string :image2
+      
+      t.timestamps
     end
   end
 end

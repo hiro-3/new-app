@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'topics/index'
   get 'sessions/new'
   get 'users/new'
+  delete 'topics/destroy'
   
  resources :pages
  resources :users 

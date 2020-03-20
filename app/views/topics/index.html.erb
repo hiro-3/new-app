@@ -19,6 +19,7 @@
                          <p class="topic-text">
                           <%= topic.description %>
                          </p>
+                         <%= link_to "削除", topics_destroy_path(@topics), method: :delete %>
              </div>
            <% end %>
         </div> 
