@@ -11,7 +11,16 @@ Rails.application.routes.draw do
  
  get 'favorites/index'
  post '/favorites', to: 'favorites#create'
-
+ get 'favorites/new', to: 'favorites#new'
+ 
+ get 'favorites1/index'
+ post '/favorites1', to: 'favorites1#create'
+ get 'favorites1/new', to: 'favorites1#new'
+ 
+ get 'favorites2/index'
+ post '/favorites2', to: 'favorites2#create'
+ get 'favorites2/new', to: 'favorites2#new'
+ 
  
  root 'pages#index'
  
