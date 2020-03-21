@@ -20,6 +20,8 @@
                           <%= topic.description %>
                          </p>
                          <%= link_to "削除", topics_destroy_path(@topics), method: :delete %>
+                          <%= link_to "投票", favorites_path(topic_id: topic.id), method: :post %>
+                          <%= topic.favorite_users.count %>
              </div>
            <% end %>
         </div> 

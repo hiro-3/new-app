@@ -2,7 +2,7 @@ class TopicsController < ApplicationController
  
   
    def index
-    @topics = Topic.all
+    @topics = Topic.all.includes(:favorite_users)
    end 
    
    def new
@@ -10,7 +10,7 @@ class TopicsController < ApplicationController
    end 
    
    def create
-    #binding.pry
+    binding.pry
     #後に３枚規制をかける
     @topics = current_user.topics.new(topic_params)
     
