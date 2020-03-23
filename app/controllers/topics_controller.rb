@@ -31,7 +31,7 @@ class TopicsController < ApplicationController
     private
        def topic_params 
         #画像複数投稿
-        params.require(:topic).permit(:image, :image1, :image2, :description)
+        params.require(:topic).permit(:image, :image1, :image2, :description, :description1, :description2, :description3 )
        end
 end     
    
