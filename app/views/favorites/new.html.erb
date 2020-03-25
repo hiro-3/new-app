@@ -3,7 +3,6 @@ div class="top-hero-wrapper text-center">
     <h1 class="text-white">Which do you recommend</h1>
     <h2 class="text-white">sub title</h2>
      <div class="row">
-       <% @favorites = Favorite.new unless @favorites  %>
        <div class="col-md-18">
          <%= form_for @favorites do |f| %>
           <%= f.label :comment %>

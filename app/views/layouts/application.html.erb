@@ -11,21 +11,17 @@
 
   <body>
    <!--header-->
-    <header>
-     <nav class="navbar navbar-default navbar-fixed-top navbar-transparent">
-       <div class="container">
-         <%= link_to users_new_path  do %>
-           <span><%= image_tag "cooltext.png", class: "nav-brand" %></span>
-         <% end %> 
-       </div>
-        <div class="nav navbar-nav navbar-right">
+    <header class="page-header">
+     <%= link_to users_new_path  do %>
+      <span><%= image_tag "cooltext.png", class: "nav-brand" %></span>
+     <% end %> 
+      <nav class="main-nav ">
           <ul>
            <li><%= link_to 'ログイン', login_path %></li>
            <li><%= link_to 'ログアウト', logout_path, method: :delete %></li>
            <li><%= link_to '会員登録', users_new_path %></li>
            <li><%= link_to '投稿', new_topic_path %></li>
           </ul>
-        </div>
      </nav>
     </header>
       <% flash.each do |key, value| %>
