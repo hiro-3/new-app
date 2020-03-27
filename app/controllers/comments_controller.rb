@@ -12,7 +12,16 @@ class CommentsController < ApplicationController
          flash.now[:danger] = "コメントできませんでした"
           render :new
         end
-   end  
+   end 
+   
+   def edit
+    @comments = Comment.find_by(params[:id])
+   end 
+   def update
+     @comments = Comment.find_by(params[:id])
+     @comments.update(comment_params)
+     redirect_to topics_path, success: "変更をしました"
+   end 
     
     private
       def comment_params

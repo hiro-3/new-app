@@ -22,6 +22,7 @@
              <% topic.comments.each do |comment| %>
               <p><%= comment.description %></p>
              <% end %>
+             <%= link_to "変更", edit_comment_path(:id) %>
           </div>
         </div>        
      <% end %> 
