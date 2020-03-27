@@ -9,7 +9,7 @@ class TopicsController < ApplicationController
      @topics = Topic.new
    end 
    
-   3.times do 
+   
      def create
       #binding.pry
       @topics = current_user.topics.new(topic_params)
@@ -20,7 +20,6 @@ class TopicsController < ApplicationController
           render :new
        end  
      end 
-   end
    def destroy
     @topics = Topic.find_by(params[:id])
     @topics.destroy
