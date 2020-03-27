@@ -1,14 +1,5 @@
 class FavoritesController < ApplicationController
   
-  
-  def index
-    @favorites = current_user.favorite_topics
-  end 
-
-  def new
-    @favorites = Favorite.new
-  end  
-  
   def create
     #binding.pry
     favorite = Favorite.new

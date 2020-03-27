@@ -54,20 +54,8 @@ body {
 }
 
 .topic-index-wrapper {
-  padding-top: 70px;
   background-color: #fafafa;
-  .topic-index-single {
-    background-color: #fff;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin-top: 30px;
-    border: 1px solid #e6ecf0;
-    border-radius: 3px;
-    .topic-author {
-      padding-right: 20px;
-      padding-left: 20px;
-    }
-
+   
     .topic-text {
       padding-right: 20px;
       padding-left: 20px;
@@ -78,15 +66,16 @@ body {
       margin-bottom: 20px;
       width: 100%;
     }
+ }
 
-    .topic-index-icon {
-      width: 35px;
-      height: 30px;
-      margin-left: 20px;
-    }
-  }
-}
 
-.page-text{
+.container{
+   background-color: #fff;
+    
   color: fff56c;
+}
+.col-md-4{
+}
+.row1{
+  display: inline-block;
 }

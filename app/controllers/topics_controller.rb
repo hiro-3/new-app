@@ -14,7 +14,7 @@ class TopicsController < ApplicationController
       #binding.pry
       @topics = current_user.topics.new(topic_params)
        if @topics.save
-          redirect_to topics_path, success:'成功'
+          redirect_to new_topic_path, success:'成功'
        else
           flash.now[:danger] = '失敗'
           render :new
