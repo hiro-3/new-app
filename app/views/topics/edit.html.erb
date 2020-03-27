@@ -1,0 +1,16 @@
+<div class="top-hero-wrapper text-center">
+  <div class="container top-hero-container">
+    <h1 class="text-white">Which do you recommend ?</h1>
+    <h2 class="text-white">sub title</h2>
+       <div class="row">
+         <%= form_for @topics do |f| %>
+           <div class="col-md-4 ">
+             <%= f.label :image %>
+             <%= f.file_field :image %>
+             <%= f.label :description %><br>
+             <%= f.text_field :description %>
+           </div>
+             <%= f.submit "変更", class: 'btn btn-black btn-block' %>
+         <% end %> 
+  </div>
+</div>         

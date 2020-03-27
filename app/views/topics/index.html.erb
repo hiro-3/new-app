@@ -11,8 +11,9 @@
                   <%= topic.favorite_users.count %><br>
                   <%= link_to new_comment_path(topic_id: topic.id) do %>
                    <%= "コメント" %><br>
-                  <% end %> 
-                    <%= link_to "削除", topics_destroy_path(@topics), method: :delete %>
+                  <% end %>
+                   <%= link_to "変更",edit_topic_path(:id) %>
+                   <%= link_to "削除", topics_destroy_path(@topics), method: :delete %>
                  </div> 
                </div> 
           </div>     
