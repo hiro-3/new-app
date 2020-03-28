@@ -21,10 +21,10 @@
             <h3>コメント</h3>
              <% topic.comments.each do |comment| %>
               <p><%= comment.description %></p>
-             <% end %>
-            <%= if comment_in? %>  
-             <%= link_to "変更", edit_comment_path(:id) %>
-            <% end %> 
+                 <% if comment.description.present? %>
+                  <%= link_to "変更", edit_comment_path(:id) %>
+                 <% end %>  
+             <% end %>    
           </div>
         </div>        
      <% end %> 
