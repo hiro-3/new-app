@@ -7,15 +7,14 @@ Rails.application.routes.draw do
   
  resources :pages
  resources :users 
- resources :topics
- resources :comments
  
-  post '/comments', to: 'comments#create'
+ post '/comments', to: 'comments#create'
+ 
+ resources :topics do
+  resources :favorites, only: [:create, :destroy]
+ end
  
  
- get 'favorites/index'
- post '/favorites', to: 'favorites#create'
- get 'favorites/new', to: 'favorites#new'
  
  root 'pages#index'
  
@@ -23,5 +22,7 @@ Rails.application.routes.draw do
  post   '/login', to: 'sessions#create'
  delete '/logout',to: 'sessions#destroy'
  
+ 
+
 end
 

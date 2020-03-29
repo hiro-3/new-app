@@ -1,23 +1,26 @@
 class FavoritesController < ApplicationController
+  before_action :set_topic
+  
   
   def create
     #binding.pry
-    favorite = Favorite.new
-    favorite.user_id = current_user.id
-    favorite.topic_id = params[:topic_id]
+    @favorite = Favorite.create(user_id: current_user.id, topic_id: params[:topic_id])
+    @favorites = Favorite.where(topic_id: params[:topic_id])
+    @topics.reload
+  end  
     
-    if favorite.save
-      redirect_to topics_path, success: '成功'
-    else
-      redirect_to topics_path, danger: '失敗'
-    end
-  end 
+  def destroy  
+    favorite = Favorite.find_by(user_id: current_user.id, topic_id: params[:topic_id])
+    favorite.destroy
+    @favorites = Favorite.where(topic_id: params[:topic_id])
+    @tpoics.reload
+  end
   
+    
   private
-   def topic_params
-     params.require(:topic).permit(:user_id)
+   
+   def set_topic
+     @topics = Favorite.find(params[:topic_id])
    end 
-   def favorite_params
-     params.require(:favorite).permit(:user_id, :topic_id, :comment)
-   end
+   
 end
