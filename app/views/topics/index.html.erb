@@ -10,7 +10,7 @@
                  <div id="favorites_buttons_<%= topic.id %>">
                   <%= render partial: 'favorites/favorite', locals: { topic: topic, favorites: @favorites} %>
                  </div>
-                   <%= link_to "変更",edit_topic_path(:id) %>
+                   <%= link_to "変更", edit_topic_path(:id) %>
                    <%= link_to "削除", topics_destroy_path(@topics), method: :delete %>
                </div> 
           </div>

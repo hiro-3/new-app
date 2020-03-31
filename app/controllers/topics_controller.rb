@@ -12,8 +12,8 @@ class TopicsController < ApplicationController
    
     def create
      #binding.pry
-     @topic = current_user.topics.new(topic_params)
-       if @topic.save
+     @topics = current_user.topics.new(topic_params)
+       if @topics.save
           redirect_to new_topic_path, success:'成功'
        else
           flash.now[:danger] = '失敗'
