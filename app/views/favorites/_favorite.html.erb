@@ -9,7 +9,7 @@
         </span>  
     </div>
   <% end %>  
-  <% else %> 
+ <% else %> 
     <%= link_to topic_favorites_path(topic.id), method: :post, remote: true do %>
       <div class="vertical_like">
          <i class="material-icons grey-text text-darken-2">favorite_border</i>
