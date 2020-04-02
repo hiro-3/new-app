@@ -22,17 +22,17 @@ class TopicsController < ApplicationController
     end 
      
     def edit
-     @topics = Topic.find_by(params[:id])
+     @topics = Topic.find(params[:id])
     end 
     
     def update
-     @topics = Topic.find_by(params[:id])
+     @topics = Topic.find(params[:id])
      @topics.update(topic_params)
      redirect_to topics_path, success:'変更しました'
     end  
      
    def destroy
-    @topics = Topic.find_by(params[:id])
+    @topics = Topic.find(params[:id])
     @topics.destroy
      redirect_to topics_path, success:'成功'
    end

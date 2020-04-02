@@ -15,10 +15,10 @@ class CommentsController < ApplicationController
    end 
    
    def edit
-    @comments = Comment.find_by(params[:id])
+    @comments = Comment.find(params[:id])
    end 
    def update
-     @comments = Comment.find_by(params[:id])
+     @comments = Comment.find(params[:id])
      @comments.update(comment_params)
      redirect_to topics_path, success: "変更をしました"
    end 

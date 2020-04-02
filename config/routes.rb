@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   
  resources :pages
  resources :users 
+ resources :comments
  
  post '/comments', to: 'comments#create'
  
