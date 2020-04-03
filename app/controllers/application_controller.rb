@@ -3,11 +3,8 @@ class ApplicationController < ActionController::Base
 
  add_flash_types :success, :info, :warning, :danger
 
- helper_method :current_user, :logged_in?, :current_comment, :comment_in?
+ helper_method :current_user, :logged_in?
  
-  def log_in(user)
-   session[:user_id] = user.id
-  end 
   
   def current_user
     @current_user ||= User.find_by(id: session[:user_id])
@@ -16,12 +13,5 @@ class ApplicationController < ActionController::Base
   def logged_in?
   !current_user.nil?
   end
-
-  def current_comment
-   @current_comment ||= Comment.find_by(description: comment[:description])
-  end 
-   
-  def comment_in?
-  !current_comment.nil?
-  end 
-end 
+end
+  

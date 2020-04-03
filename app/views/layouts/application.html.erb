@@ -16,19 +16,22 @@
       <span><%= image_tag "cooltext.png", class: "nav-brand" %></span>
      <% end %> 
       <nav>
-          <ul class="main-nav ">
-           <li><%= link_to 'ログイン', login_path %></li>
-           <li><%= link_to 'ログアウト', logout_path, method: :delete %></li>
-           <li><%= link_to '会員登録', users_new_path %></li>
-           <li><%= link_to '投稿', new_topic_path %></li>
-           <li><%= link_to '投稿表示', topics_index_path %></li>
-          </ul>
+        <ul class="main-nav ">
+          <% if logged_in? %>
+            <li><%= link_to '投稿', new_topic_path %></li>
+            <li><%= link_to 'ログアウト', logout_path, method: :delete %></li>
+          <% else %> 
+            <li><%= link_to 'ログイン', login_path %></li>
+            <li><%= link_to '会員登録', users_new_path %></li>
+            <li><%= link_to '投稿表示', topics_index_path %></li>
+　　　　　<% end %>
+        </ul>
      </nav>
     </header>
       <% flash.each do |key, value| %>
        <div class="alert alert-<%= key %>" role="alert"><%= value %></div>
       <% end %>
-　   <%= yield %>
+　  <%= yield %>
     <script>
      $(function(){
      $(".alert").fadeOut(5000);
