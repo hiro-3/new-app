@@ -1,7 +1,9 @@
 <div class="top-hero-wrapper text-center">
   <div class="container top-hero-container">
     <h1 class="text-white">Which do you recommend</h1>
+      <% unless logged_in? %>
        <h2 class="text-white">会員登録してログインすれば、投稿できます！</h2>
+      <% end %> 
   </div>
 </div>         
            

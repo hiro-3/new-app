@@ -24,12 +24,12 @@ class SessionsController < ApplicationController
    end 
    
    def log_out
-     session.delete(:users_id)
+     session.delete(:user_id)
      @current_user = nil
    end
 
    def user_params
-    params.require(:user).permit(:name, :email, :password,:password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
    end
    def email_params
       params.require(:session).permit(:email)
