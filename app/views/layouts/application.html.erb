@@ -11,14 +11,14 @@
 
   <body>
    <!--header-->
-    <header class="page-header">
+    <header class="page_header">
      <%= link_to users_new_path  do %>
       <span><%= image_tag "cooltext.png", class: "nav-brand" %></span>
      <% end %> 
       <nav>
         <ul class="main-nav ">
           <% if logged_in? %>
-            <li><%= link_to '投稿', new_topic_path %></li>
+            <li><%= link_to '投稿', topics_new_path %></li>
             <li><%= link_to 'ログアウト', logout_path, method: :delete %></li>
           <% else %> 
             <li><%= link_to 'ログイン', login_path %></li>

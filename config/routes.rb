@@ -1,19 +1,19 @@
 Rails.application.routes.draw do
-  get 'topics/new'
-  get 'topics/index'
   get 'sessions/new'
   get 'users/new'
+  get '/topics/index', to: 'topics#index'
+  get '/topics/new'
   delete 'topics/destroy'
   
+  
  resources :pages
- resources :users 
+ resources :users
  resources :comments
+ resources :votes
+ resources :favorites
  
  post '/comments', to: 'comments#create'
- 
- resources :topics do
-  resources :favorites, only: [:create, :destroy]
- end
+ post '/topics', to: 'topics#create'
  
  
  

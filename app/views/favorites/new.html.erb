@@ -1,0 +1,12 @@
+<div class="top-hero-wrapper text-center">
+  <div class="container top-hero-container">
+       <div class="row">
+         <%= form_for @favorites do |f| %>
+           <div class="col-md-4 ">
+             <%= f.label "コメント" %>
+             <%= f.text_field :comment %>
+           </div> 
+         <%  end %>
+       </div>
+  </div>     
+</div>       

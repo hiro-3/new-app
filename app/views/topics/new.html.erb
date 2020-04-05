@@ -5,13 +5,25 @@
        <div class="row">
          <%= form_for @topics do |f| %>
            <div class="col-md-4 ">
-             <%= f.label :image %>
+             <%= f.check_box :number %>
+             <%= f.label "No1" %>
              <%= f.file_field :image %>
-             <%= f.label :description %><br>
+             <%= f.label :"No1" %>
              <%= f.text_field :description %>
+           </div> 
+        　 <div class="col-md-4 ">
+        　   <%= f.check_box :number1 %>  
+             <%= f.label "No2"%>
+             <%= f.file_field :image1 %>
+             <%= f.label "No2"%>
+             <%= f.text_field :description1 %>
+            </div><br> 
+             <%= f.label "投稿内容" %>
+             <%= f.text_field :description2 %>
              <%= f.submit '投稿', class: 'btn btn-black btn-block' %>
-           </div>   
+           </div> 
          <% end %> 
+      </div>     
   </div>
 </div>         
       
